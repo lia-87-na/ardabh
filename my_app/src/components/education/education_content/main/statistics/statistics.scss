@@ -1,0 +1,127 @@
+#statistics {
+    background: #f8f9fa;
+    padding: 3rem 1rem;
+    text-align: center;
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: #222;
+        max-width: 900px;
+        margin-inline: auto;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem 1rem;
+            width: 180px;
+            max-width: 90vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            .count {
+                font-size: 2.2rem;
+                font-weight: bold;
+                color: #1e90ff;
+                margin-bottom: 0.5rem;
+            }
+
+            .label {
+                font-size: 1rem;
+                color: #333;
+                line-height: 1.4;
+            }
+        }
+    }
+}
+
+// ✅ Ադապտիվություն փոքր էկրանների համար
+@media screen and (max-width: 768px) {
+    #statistics {
+        h2 {
+            font-size: 1.6rem;
+        }
+
+        ul {
+            gap: 1.5rem;
+
+            li {
+                width: 150px;
+
+                .count {
+                    font-size: 2rem;
+                }
+
+                .label {
+                    font-size: 0.95rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #statistics {
+        padding: 2rem 0.5rem;
+
+        h2 {
+            font-size: 1.3rem;
+        }
+
+        ul {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+
+            li {
+                width: 100%;
+                max-width: 300px;
+
+                .count {
+                    font-size: 1.8rem;
+                }
+
+                .label {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 300px) {
+    #statistics {
+        h2 {
+            font-size: 1.1rem;
+        }
+
+        ul li {
+            padding: 1rem;
+
+            .count {
+                font-size: 1.5rem;
+            }
+
+            .label {
+                font-size: 0.85rem;
+            }
+        }
+    }
+}

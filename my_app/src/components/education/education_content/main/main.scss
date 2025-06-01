@@ -1,0 +1,47 @@
+#contact {
+    display: flex;
+    gap: 40px; // մեծացում տարածության միջև
+    margin-top: 50px;
+    padding: 20px 0;
+
+    >* {
+        flex: 1;
+        min-width: 320px; // մի քիչ ավելի լայն նվազագույնը
+        background: #f9f9f9; // թեթև մոխրագույն ֆոն
+        border: 1px solid #ddd; // նուրբ շրջանակ
+        border-radius: 8px;
+        padding: 30px 25px;
+        box-shadow: 0 4px 10px rgb(0 0 0 / 0.05);
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+            box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+        }
+    }
+
+    // Եթե ուզում ես վերնագրերը կենտրոնացնել էլեմենտների ներսում
+    >* h2 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        color: #333;
+    }
+
+    // Մոբայլում մեկ սյունակ՝ առանց շրջանակի և background-ի (եթե ուզում ես)
+    @media (max-width: 767px) {
+        flex-direction: column;
+        gap: 30px;
+
+        >* {
+            min-width: auto;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        >* h2 {
+            text-align: center;
+        }
+    }
+}

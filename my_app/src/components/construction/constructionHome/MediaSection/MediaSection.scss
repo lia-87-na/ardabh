@@ -1,0 +1,77 @@
+.media-section {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h2 {
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+        color: #222;
+        text-align: center;
+    }
+
+    .video-container {
+        margin-bottom: 2rem;
+
+        video {
+            width: 100%;
+            max-height: 400px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            object-fit: cover;
+        }
+
+        .description {
+            margin-top: 0.8rem;
+            font-size: 1rem;
+            color: #555;
+            text-align: center;
+        }
+    }
+
+    .gallery-container {
+        .images {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .image-card {
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                object-fit: cover;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            p {
+                margin-top: 0.5rem;
+                font-size: 0.95rem;
+                color: #444;
+                text-align: center;
+            }
+        }
+    }
+
+    // 📱 Ադապտիվ կարգավորումներ փոքր էկրանների համար
+    @media (min-width: 480px) {
+        .gallery-container .images {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 768px) {
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        .gallery-container .images {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .description {
+            font-size: 1.1rem;
+        }
+    }
+}

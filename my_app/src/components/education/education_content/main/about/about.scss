@@ -1,0 +1,159 @@
+#about {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+
+    .about {
+        max-width: 800px;
+        margin: 0 auto 40px auto;
+        text-align: center;
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #222;
+        }
+
+        em {
+            display: block;
+            font-style: italic;
+            font-weight: 500;
+            margin-bottom: 24px;
+            color: #666;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            text-align: justify;
+
+            a {
+                color: #007bff;
+                text-decoration: underline;
+
+                &:hover {
+                    color: #0056b3;
+                }
+            }
+        }
+    }
+
+    .tamaryan {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+        background: #fff;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+        border-radius: 12px;
+
+        .photo {
+            flex-shrink: 0;
+            text-align: center;
+
+            img {
+                width: 220px;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                margin-bottom: 12px;
+            }
+
+            h4 {
+                font-size: 18px;
+                color: #444;
+                margin-top: 0;
+            }
+        }
+
+        ul {
+            flex: 1;
+            padding-left: 20px;
+
+            li {
+                margin-bottom: 10px;
+                font-size: 15px;
+                line-height: 1.5;
+                list-style: disc;
+            }
+        }
+    }
+
+    // Responsiveness
+    @media (max-width: 768px) {
+        .tamaryan {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            .photo {
+                img {
+                    width: 180px;
+                }
+            }
+
+            ul {
+                padding-left: 0;
+
+                li {
+                    text-align: left;
+                }
+            }
+        }
+
+        .about {
+            h2 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 30px 12px;
+
+        .about {
+            h2 {
+                font-size: 20px;
+            }
+
+            em {
+                font-size: 14px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        .tamaryan {
+            gap: 24px;
+            padding: 16px;
+
+            .photo img {
+                width: 140px;
+            }
+
+            ul li {
+                font-size: 14px;
+            }
+        }
+    }
+
+    @media (max-width: 320px) {
+        .about h2 {
+            font-size: 18px;
+        }
+
+        .tamaryan .photo img {
+            width: 120px;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+/* Հիմնական շտկում՝ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  min-width: 300px;
+  scroll-behavior: smooth;
+  z-index: -6;
+  position: relative;
+
+
+}
+
+#root {
+  z-index: -4;
+  position: relative;
+}
+
+body {
+  z-index: -5;
+  position: relative;
+}
+
+body.nav-open nav {
+  position: fixed;
+  z-index: 100000;
+  pointer-events: auto;
+  display: block;
+}
+
+.menu-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100000;
+  /* Մենյուի իկոնն ավելի բարձր z-index ունի */
+}
+
+/* Եթե հղումները չեն աշխատում, փորձիր այս հավելյալ կանոնները */
+nav.open {
+  pointer-events: auto !important;
+}
+
+nav.open a {
+  pointer-events: auto !important;
+}
+
+.icon-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #e0e0e0;
+  color: #333;
+  border: 1px solid #bbb;
+  padding: 0.5rem 0.7rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+
+  &:hover {
+    background-color: #cccccc;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.15);
+  }
+}
