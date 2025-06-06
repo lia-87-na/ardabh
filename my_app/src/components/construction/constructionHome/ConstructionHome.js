@@ -100,7 +100,7 @@ export default function ConstructionHome() {
                 </section>
 
                 <form className="contact-form" onSubmit={handleSubmit}>
-                    <h2>Կապ Մեզ Հետ</h2>
+                    <h2>Բնակարանի ձեռքբերման դիմում</h2>
                     {error && <p className="error">{error}</p>}
                     {success && <p className="success">{success}</p>}
                     <input

@@ -5,21 +5,20 @@ import Courses from './courses/Courses'
 import Up from '../../../up/Up'
 import Statistics from './statistics/Statistics'
 import Social from './Social'
-import Contact from './contact/Contact'
+
 import Register from './register/Register'
 import AnimatedImageSlider from './AnimatedImageSlider'
+import Staff from './staff/Staff'
 export default function Main() {
   return (
     <div className='main' >
       <About />
       <Courses />
-      <AnimatedImageSlider/>
+      <AnimatedImageSlider />
       <Social />
       <Statistics />
-     <div id='contact'>
-        <Contact />
-        <Register />
-     </div>
+      <Staff />
+      <Register />
       <Up />
     </div>
   )

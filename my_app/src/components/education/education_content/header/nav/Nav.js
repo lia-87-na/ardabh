@@ -8,7 +8,8 @@ export default function Nav() {
         { title: 'Մեր մասին', href: '#about' },
         { title: 'Դասընթացներ', href: '#courses' },
         { title: 'Վիճակագրություն', href: '#statistics' },
-        { title: 'Կապ', href: '#contact' },
+        { title: 'Աշխատակազմ', href: '#staff' },
+        { title: 'Գրանցվել', href: '#register' },
     ];
 
     useEffect(() => {

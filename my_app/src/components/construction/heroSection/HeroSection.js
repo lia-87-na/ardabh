@@ -6,14 +6,14 @@ export default function HeroSection() {
     <section className="hero">
       <div className="hero-content">
         <div className="hero-text">
-          <h2>Vanadzor Home 1 (2 Bedroom)</h2>
+          <h2>Վանաձոր տուն (1 հարկ)</h2>
           <p>
             Մոդուլային բնակարան՝ նախատեսված երկհարկանի տների համար, նախագծված «Տրիպտիխ» ճարտարապետական ընկերության կողմից։
             Տունն ունի հիմնական ննջասենյակ, մանկական սենյակ, լոգասենյակ, խոհանոց և ընդարձակ հյուրասենյակ։
           </p>
         </div>
        
-        <img src="/images/home1.jpeg" alt="Տան արտաքին տեսք" />
+        <img src="/images/exterior4.jpeg" alt="Տան արտաքին տեսք" />
       </div>
     </section>
   );

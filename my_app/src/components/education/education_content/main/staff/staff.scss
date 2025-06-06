@@ -1,0 +1,303 @@
+/* staff.scss */
+#staff {
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #f0f4f8, #ffffff);
+    text-align: center;
+
+    h2 {
+        font-size: 2.4rem;
+        margin-bottom: 3rem;
+        color: #1d3557;
+        font-weight: 600;
+    }
+
+    .staff-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .staff-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 0 0.5rem;
+
+        @media (max-width: 500px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .staff-card {
+        background: #ffffff;
+        border-radius: 1.5rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+        padding: 3.5rem 1.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        cursor: default;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        opacity: 0;
+        animation: slideUp 0.6s ease forwards;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 60px;
+            width: 100%;
+            background: linear-gradient(to right, #a8dadc, #457b9d);
+            clip-path: ellipse(70% 100% at 50% 0%);
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+            z-index: 0;
+        }
+
+        &:hover {
+            background: #f1faff;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .staff-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 0 0 3px rgba(168, 218, 220, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 5px rgba(69, 123, 157, 0.6);
+            }
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+            color: #1d3557;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        h4 {
+            font-size: 1rem;
+            color: #457b9d;
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .staff-socials {
+            display: flex;
+            gap: 0.7rem;
+            margin-top: auto;
+            position: relative;
+            z-index: 1;
+
+            a {
+                background: #1d3557;
+                color: #fff;
+                padding: 0.5rem;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.1rem;
+                transition: background 0.3s ease;
+
+                &.facebook {
+                    background: #3b5998;
+
+                    &:hover {
+                        background: #2d4373;
+                    }
+                }
+
+                &.instagram {
+                    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+                }
+
+                &.linkedin {
+                    background: #0077b5;
+
+                    &:hover {
+                        background: #005582;
+                    }
+                }
+
+                &.email {
+                    background: #6c757d;
+                }
+
+                &.website {
+                    background: #2a9d8f;
+                }
+            }
+        }
+    }
+
+    /* Modal styles */
+    .modall {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(29, 53, 87, 0.85);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        cursor: pointer;
+        padding: 1rem;
+
+        .modal-content {
+            position: relative;
+            max-width: 30vw;
+            max-height: 90vh;
+            animation: zoomIn 0.4s ease forwards;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 0 0 4px #a8dadc;
+            cursor: default;
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 1rem;
+            }
+
+            .close {
+                position: absolute;
+                top: 0.5rem;
+                right: 0.8rem;
+                font-size: 2.4rem;
+                color: white;
+                cursor: pointer;
+                font-weight: 700;
+                user-select: none;
+                z-index: 10;
+            }
+        }
+    }
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Mobile optimization: max-width 300px */
+ @media screen and (max-width:425px) {
+    .modal-content{
+        max-width: 90vw !important;
+    }
+ }
+@media (max-width: 300px) {
+    #staff {
+        padding: 2rem 0.5rem;
+
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+        }
+
+        .staff-list {
+            gap: 1.5rem;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .staff-card {
+            padding: 2.5rem 1rem 1.5rem;
+            width: 100%;
+            max-width: 260px;
+
+            .staff-image {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 1rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            h4 {
+                font-size: 0.9rem;
+            }
+
+            p {
+                font-size: 0.85rem;
+            }
+
+            .staff-socials {
+                gap: 0.5rem;
+
+                a {
+                    padding: 0.4rem;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .modall {
+            padding: 0.5rem;
+
+            .modal-content {
+                max-width: 90vw !important;
+
+                .close {
+                    font-size: 2rem;
+                    top: 0.3rem;
+                    right: 0.5rem;
+                }
+            }
+        }
+    }
+}

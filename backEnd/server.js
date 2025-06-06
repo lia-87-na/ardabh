@@ -10,7 +10,6 @@ const bcrypt = require('bcrypt');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Backup JSON ֆայլի ճանապարհը
 const backupPath = path.join(__dirname, 'backup.json');
 
 app.use(cors());
@@ -32,7 +31,6 @@ mongoose.connect(mongoURI, {
 }).then(async () => {
     console.log("✅ MongoDB միացված է");
 
-    // ✅ Ստեղծում ենք ադմինը եթե չի գոյություն ունենում
     const username = 'adminArda';
     const plainPassword = 'arda2025';
 
@@ -114,7 +112,6 @@ app.post('/api/register', async (req, res) => {
             text: `📥 Նոր գրանցում\n\n👤 Անուն՝ ${name}\n📌 Մասնագիտություն՝ ${specialty}\n📞 Հեռախոս՝ ${phone}\n📧 Էլ․ հասցե՝ ${email}`
         });
 
-        // Գրանցումը պահպանում ենք backup.json ֆայլում
         let existing = fs.existsSync(backupPath) ? JSON.parse(fs.readFileSync(backupPath, 'utf-8')) : [];
         existing.push(entry);
         fs.writeFileSync(backupPath, JSON.stringify(existing, null, 2));
@@ -217,6 +214,21 @@ app.delete('/api/registrations/delete', (req, res) => {
         res.status(500).json({ message: 'Ջնջման սխալ։' });
     }
 });
+
+const buildPath = path.join(__dirname, '..', 'my_app', 'build');
+if (fs.existsSync(buildPath)) {
+    app.use(express.static(buildPath));
+
+    // Any route except /api/*
+    app.get(/^\/(?!api).*/, (req, res) => {
+        res.sendFile(path.join(buildPath, 'index.html'));
+    });
+} else {
+    console.warn('⚠️ Build folder not found at:', buildPath);
+}
+
+
+
 
 // ======== Սերվերի մեկնարկ ======== //
 app.listen(PORT, () => console.log(`🚀 Server is running on http://localhost:${PORT}`));

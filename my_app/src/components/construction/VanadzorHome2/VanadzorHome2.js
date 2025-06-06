@@ -6,9 +6,9 @@ const VanadzorHome2 = () => {
         <section className="vanadzor-home">
             <div className="container">
                 <div className="text-block">
-                    <h1>ARDA Vanadzor Home</h1>
+                    <h1>Վանաձոր տուն (2 հարկ)</h1>
                     <p>
-                        «Home of Hope» նախագիծը Վանաձորում նախատեսում է մեկ հարկանի, երեք
+                        «Home of Hope» նախագիծը Վանաձորում նախատեսում է երկու հարկանի, երեք
                         սենյականոց բնակելի տներ՝ նախատեսված ժամանակակից, խելացի և էներգաարդյունավետ ընտանիքների համար։
                     </p>
                     <ul>
@@ -19,7 +19,7 @@ const VanadzorHome2 = () => {
                     </ul>
                 </div>
                 <div className="image-block">
-                    <img src="/images/exterior4.jpeg" alt="Vanadzor House" />
+                    <img src="/images/home1.jpeg" alt="Vanadzor House" />
                 </div>
             </div>
         </section>
