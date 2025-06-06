@@ -1,0 +1,11 @@
+# Node.js / Express
+/backEnd/node_modules
+/backEnd/.env
+
+# React
+/my_app/node_modules
+/my_app/build
+/my_app/.env
+
+# Logs
+*.log
